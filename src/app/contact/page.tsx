@@ -12,18 +12,16 @@ import {
 export default function ContactPage() {
   return (
     <div className="contact-page">
-      <Navigation />
       
       {/* Hero Section */}
       <section className="contact-hero">
         <div className="hero-content">
           <h1>Contact Us</h1>
-          <p className="hero-subtitle">Get in touch with the Swamp Records team</p>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="contact-info-section">
+      {/* <section className="contact-info-section">
         <div className="container">
           <h2>Get In Touch</h2>
           <div className="contact-grid">
@@ -64,7 +62,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Form */}
       <section className="contact-form-section">
@@ -128,7 +126,7 @@ export default function ContactPage() {
           <div className="faq-grid">
             <div className="faq-item">
               <h3>How do I apply to join the team?</h3>
-              <p>Visit our <a href="/apply">Apply page</a> for current application status and available positions. We typically open applications in August for Fall semester and January for Spring semester.</p>
+              <p>Visit our <a href="/apply">application page</a> for current application status and available positions. We typically open applications in August for Fall semester and January for Spring semester.</p>
             </div>
             
             <div className="faq-item">
@@ -160,7 +158,7 @@ export default function ContactPage() {
       </section>
 
       {/* Social Media */}
-      <section className="social-section">
+      {/* <section className="social-section">
         <div className="container">
           <h2>Follow Us</h2>
           <p>Stay connected with Swamp Records on social media for the latest updates, behind-the-scenes content, and exclusive announcements.</p>
@@ -183,9 +181,8 @@ export default function ContactPage() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <Footer />
     </div>
   );
 } 

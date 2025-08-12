@@ -27,7 +27,7 @@ export default function Navigation() {
         <nav className="nav-links">
           <a href="/about">About</a>
           <a href="/artists">Artists</a>
-          <a href="/events">Events</a>
+          {/* <a href="/events">Events</a> */}
           <a href="/apply">Apply</a>
           <a href="/contact">Contact</a>
 
