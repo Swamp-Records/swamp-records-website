@@ -54,7 +54,7 @@ export default function EventsPage() {
       <section className="events-hero">
         <div className="hero-content">
           <h1>Events</h1>
-          <p className="hero-subtitle">Live music, unforgettable experiences, and the best of Gainesville's music scene</p>
+          <p className="hero-subtitle">Live music, unforgettable experiences, and the best of Gainesville&apos;s music scene</p>
         </div>
       </section>
 

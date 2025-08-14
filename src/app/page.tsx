@@ -1,8 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Carousel from '@/components/Carousel';
 import BioSection from '@/components/BioSection';
-import ServicesSection from '@/components/ServicesSection';
-import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 const carouselSlides = [

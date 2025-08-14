@@ -34,12 +34,12 @@ export default function AboutPage() {
           We strive to empower the Florida music scene through planning concerts,
           events, and festivals in the Gainesville area. Aiming to promote all
           aspects of local art, music, and culture, we collaborate with Gainesville
-          businesses, nonprofits, and artists to develop our community. We've been
-          a part of Gainesville music for over 10 years and we're dedicated to
+          businesses, nonprofits, and artists to develop our community. We&apos;ve been
+          a part of Gainesville music for over 10 years and we&apos;re dedicated to
           continuing its legacy in Florida through our continued work.
         </p>
         <p>
-          Overall we’re a collective of creatives, organizers, taste-makers, and
+          Overall we&apos;re a collective of creatives, organizers, taste-makers, and
           friends working to uplift Gainesville.
         </p>
       </section>

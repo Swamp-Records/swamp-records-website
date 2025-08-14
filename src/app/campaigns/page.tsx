@@ -65,7 +65,7 @@ export default function CampaignsPage() {
       <section className="campaigns-hero">
         <div className="hero-content">
           <h1>Campaigns</h1>
-          <p className="hero-subtitle">Strategic marketing and promotion for Gainesville's finest artists</p>
+          <p className="hero-subtitle">Strategic marketing and promotion for Gainesville&apos;s finest artists</p>
         </div>
       </section>
 

@@ -23,11 +23,11 @@ const currentArtists = [
 
 // const previousArtists = [
 //   {
-//     name: "The Swamp Cats",
+//     name: "  ",
 //     image: "/artists/swamp-cats.jpg",
 //     genre: "Blues Rock",
 //     year: "2023",
-//     description: "Gainesville's favorite blues rock band that brought the swamp to life."
+//     description: ""
 //   }
 // ];
 
@@ -118,7 +118,7 @@ export default function ArtistsPage() {
           <h2 style={{marginBottom: '1rem'}}>Want to Join Our Family?</h2>
           <p>
             Are you a musician or band looking for support in the Gainesville area? 
-            We're always looking for new talent to work with.
+            We&apos;re always looking for new talent to work with.
           </p>
           <div className="cta-buttons">
             {/* <a href="/campaigns" className="cta-button primary">View Campaigns</a> */}
