@@ -119,7 +119,7 @@ export default function ArtistsPage() {
             We&apos;re always looking for new talent to work with.
           </p>
           <div className="cta-buttons">
-            {/* <a href="/campaigns" className="cta-button primary">View Campaigns</a> */}
+            <a href="/campaigns" className="cta-button primary">View Campaigns</a>
             <a href="/contact" className="cta-button secondary">Get In Touch</a>
           </div>
         </div>
