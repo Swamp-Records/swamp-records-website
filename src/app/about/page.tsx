@@ -14,15 +14,25 @@ export default function AboutPage() {
     "nancys.webp",
   ];
 
+  const credits: Record<string, string> = {
+    "elise-buboy.webp": "Photo: Elise Norman",
+    "elise-crowd.webp": "Photo: Elise Norman",
+    "elise-nancys.webp": "Photo: Elise Norman",
+    "elise-tempo.webp": "Photo: Elise Norman",
+    "flipturn.webp": "",
+    "hayley-buboy.webp": "Photo: Hayley Power",
+    "hayley-nancys2.webp": "Photo: Hayley Power",
+    "nancys.webp": "",
+  };
+
   return (
     <main className="about-page">
       <section className="about-text">
-      <section className="about-hero">
-        <div className="hero-content">
-          <h1>About Swamp Records</h1>
-          {/* <p className="hero-subtitle">Discover the talent that makes Gainesville's music scene thrive</p> */}
-        </div>
-      </section>
+        <section className="about-hero">
+          <div className="hero-content">
+            <h1>About Swamp Records</h1>
+          </div>
+        </section>
         <p>
           Swamp Records is a Gainesville-based, artist resource agency run by
           students at University of Florida. We offer marketing, PR,
@@ -45,17 +55,25 @@ export default function AboutPage() {
       </section>
 
       <section className="gallery">
-        {images.map((filename) => (
-          <div key={filename} className="gallery-item">
-            <Image
-              src={`/media/${filename}`}
-              alt={filename}
-              fill
-              sizes="(max-width: 900px) 50vw, 25vw"
-              priority={false}
-            />
-          </div>
-        ))}
+        {images.map((filename) => {
+          const credit = credits[filename] || "";
+          const hasCredit = credit.trim() !== "";
+          return (
+            <div
+              key={filename}
+              className={`gallery-item ${hasCredit ? "has-credit" : ""}`}
+              data-credit={hasCredit ? credit : ""}
+            >
+              <Image
+                src={`/media/${filename}`}
+                alt={filename}
+                fill
+                sizes="(max-width: 900px) 50vw, 25vw"
+                priority={false}
+              />
+            </div>
+          );
+        })}
       </section>
 
       <style jsx>{`
@@ -97,26 +115,42 @@ export default function AboutPage() {
           position: relative;
           width: 100%;
           aspect-ratio: 1 / 1;
-          min-height: 200px; /* fix initial height */
+          min-height: 200px;
           overflow: hidden;
           border-radius: 8px;
-          background-color: #222; /* optional: a dark bg to hide flash */
+          background-color: #222;
           transition: transform 0.3s ease;
           cursor: pointer;
         }
 
-        /* Target the Next.js Image internal img */
         .gallery-item :global(img) {
           object-fit: cover;
           width: 100%;
           height: 100%;
-          /* Make sure transform is smooth */
           transition: transform 0.3s ease;
         }
 
-        /* Hover effect: scale up the image */
         .gallery-item:hover :global(img) {
           transform: scale(1.05);
+        }
+
+        /* Only show overlay if has-credit class exists */
+        .gallery-item.has-credit::after {
+          content: attr(data-credit);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.6);
+          color: white;
+          font-size: 0.875rem;
+          padding: 0.5rem;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+        }
+        .gallery-item.has-credit:hover::after {
+          opacity: 1;
         }
 
         @media (max-width: 900px) {
@@ -129,4 +163,3 @@ export default function AboutPage() {
     </main>
   );
 }
-

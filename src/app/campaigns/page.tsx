@@ -1,73 +1,116 @@
-import Image from 'next/image';
+// const campaigns = [
+//   {
+//     title: "Gnomes of Neptune",
+//     artist: "Fall 2025 Artist Campaign",
+//     image: "/graphics/buboy.webp",
+//     status: "Active",
+//     description: "Comprehensive marketing campaign including social media, PR, and event coordination for Buboy's latest release.",
+//     services: ["Social Media Marketing", "PR Campaign", "Event Booking", "Content Creation"],
+//     startDate: "August 2025",
+//     endDate: "December 2025"
+//   }
+// ];
 
-const campaigns = [
-  {
-    title: "Spring 2025 Artist Campaign",
-    artist: "Buboy",
-    image: "/graphics/buboy.webp",
-    status: "Active",
-    description: "Comprehensive marketing campaign including social media, PR, and event coordination for Buboy's latest release.",
-    services: ["Social Media Marketing", "PR Campaign", "Event Booking", "Content Creation"],
-    startDate: "January 2025",
-    endDate: "May 2025"
-  },
-  {
-    title: "The Nancys Album Launch",
-    artist: "The Nancys", 
-    image: "/graphics/nancys.webp",
-    status: "Active",
-    description: "Full album launch campaign with merchandise, tour support, and digital marketing strategy.",
-    services: ["Album Launch", "Merchandise Design", "Tour Support", "Digital Marketing"],
-    startDate: "February 2025",
-    endDate: "June 2025"
-  },
-  {
-    title: "Mystery Artist Reveal",
-    artist: "Coming Soon",
-    image: "/graphics/mystery.webp",
-    status: "Planning",
-    description: "Top-secret campaign for our newest artist. Details to be revealed soon!",
-    services: ["Brand Development", "Launch Strategy", "Social Media", "Event Planning"],
-    startDate: "TBA",
-    endDate: "TBA"
-  }
-];
-
-const previousCampaigns = [
-  {
-    title: "Swamp Cats Summer Tour",
-    artist: "The Swamp Cats",
-    year: "2023",
-    description: "Successful summer tour across Florida with sold-out shows in Gainesville, Orlando, and Tampa."
-  },
-  {
-    title: "Echo Valley Folk Festival",
-    artist: "Echo Valley", 
-    year: "2022",
-    description: "Curated folk festival featuring local and regional artists in the heart of Gainesville."
-  },
-  {
-    title: "Gators Punk Revolution",
-    artist: "The Gators",
-    year: "2021", 
-    description: "Underground punk showcase that brought the Gainesville scene together."
-  }
-];
+// const previousCampaigns = [
+//   {
+//     title: "Swamp Cats Summer Tour",
+//     artist: "The Swamp Cats",
+//     year: "2023",
+//     description: "Successful summer tour across Florida with sold-out shows in Gainesville, Orlando, and Tampa."
+//   },
+//   {
+//     title: "Echo Valley Folk Festival",
+//     artist: "Echo Valley", 
+//     year: "2022",
+//     description: "Curated folk festival featuring local and regional artists in the heart of Gainesville."
+//   },
+//   {
+//     title: "Gators Punk Revolution",
+//     artist: "The Gators",
+//     year: "2021", 
+//     description: "Underground punk showcase that brought the Gainesville scene together."
+//   }
+// ];
 
 export default function CampaignsPage() {
   return (
     <div className="campaigns-page">
       
       {/* Hero Section */}
-      <section className="campaigns-hero">
-        <div className="hero-content">
-          <h1>Campaigns</h1>
-          <p className="hero-subtitle">Strategic marketing and promotion for Gainesville&apos;s finest artists</p>
-        </div>
-      </section>
+<section className="campaigns-hero">
+  <div className="hero-container">
+    <div className="hero-image">
+      <img src="/media/elise-tempo.webp" alt="Elise performing" />
+    </div>
+
+    <div className="hero-content">
+      <h1>Campaigns</h1>
+      <p>
+        One of our main goals is to empower local music through the 
+        promotion of Florida musicians. We have a rotating roster of Swamp 
+        Records artists, but we also have a Campaigns Team focused on working 
+        with musicians to build marketing plans for upcoming releases and projects. 
+        We offer an array of services, like event curation, photography, social 
+        media rollouts that can help your music grow! We have Campaigns applications 
+        open on a rolling basis for artists interested in collaborating with our team. 
+        Application information and updates can also be found on our Instagram.
+      </p>
+    </div>
+
+    <div className="hero-image">
+      <img src="/media/eileen-israeljones.webp" alt="Eileen Israel Jones performing" />
+    </div>
+  </div>
+
+  <style>{`
+    .campaigns-hero {
+      background-color: black;
+      padding: 5rem 1.5rem;
+    }
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero-content {
+      text-align: center;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .hero-content p {
+      margin-top: 1rem;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .hero-image {
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 768px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+      .hero-content {
+        order: -1; /* Puts text above images */
+      }
+    }
+  `}</style>
+</section>
 
       {/* Current Campaigns */}
-      <section className="current-campaigns">
+      {/* <section className="current-campaigns">
         <div className="container">
           <h2>Current Campaigns</h2>
           <div className="campaigns-grid">
@@ -105,10 +148,10 @@ export default function CampaignsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Previous Campaigns */}
-      <section className="previous-campaigns">
+      {/* <section className="previous-campaigns">
         <div className="container">
           <h2>Previous Campaigns</h2>
           <p className="section-intro">
@@ -127,53 +170,65 @@ export default function CampaignsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Application Section */}
-      <section className="application-section">
-        <div className="container">
-          <h2>Campaign Applications</h2>
-          <div className="application-content">
-            <div className="application-status">
-              <h3>Application Status</h3>
-              <div className="status-cards">
-                <div className="status-card closed">
-                  <h4>Spring 2025</h4>
-                  <p className="status">Applications Closed</p>
-                  <p>Thank you for your interest. We&apos;ve received an overwhelming response and are no longer accepting applications for Spring 2025 campaigns.</p>
-                </div>
-                <div className="status-card coming-soon">
-                  <h4>Fall 2025</h4>
-                  <p className="status">Coming Soon</p>
-                  <p>Applications for Fall 2025 campaigns will open in August. Stay tuned for updates and prepare your materials!</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="application-info">
-              <h3>What We Look For</h3>
-              <ul>
-                <li>Original, high-quality music</li>
-                <li>Active social media presence</li>
-                <li>Professional attitude and work ethic</li>
-                <li>Gainesville/North Central Florida based</li>
-                <li>Clear artistic vision and goals</li>
-                <li>Willingness to collaborate and grow</li>
-              </ul>
-              
-              <h3>Campaign Services</h3>
-              <ul>
-                <li>Social media marketing and management</li>
-                <li>Public relations and media outreach</li>
-                <li>Event booking and coordination</li>
-                <li>Content creation (photos, videos, graphics)</li>
-                <li>Merchandise design and production</li>
-                <li>Tour support and logistics</li>
-              </ul>
-            </div>
+{/* Application Section */}
+<section className="application-section">
+  <div className="container">
+    <h2>Campaign Applications</h2>
+    <div className="application-content">
+      {/* Status */}
+      <div className="application-status">
+        <h3 style={{ marginBottom: '1rem' }}>Application Status</h3>
+        <div className="status-cards">
+
+          <div className="status-card closed">
+            <span className="status-badge">Closed</span>
+            <h4>Fall 2025</h4>
+            <p className="status">Applications Closed</p>
+            <p>Thank you for your interest. We&apos;ve received an overwhelming response and are no longer accepting applications for Fall 2025 campaigns.</p>
           </div>
+
+          <div className="status-card coming-soon">
+            <span className="status-badge">Coming Soon</span>
+            <h4>Spring 2026</h4>
+            <p className="status">Opening August</p>
+            <p>Applications for Spring 2026 campaigns will open in August. Stay tuned for updates and prepare your materials!</p>
+          </div>
+
         </div>
-      </section>
+      </div>
+
+      {/* Info */}
+      <div className="application-info">
+        <h3>What We Look For</h3>
+        <ul>
+          <li>Original, high-quality music</li>
+          <li>Active social media presence</li>
+          <li>Professional attitude and work ethic</li>
+          <li>Gainesville/North Central Florida based</li>
+          <li>Clear artistic vision and goals</li>
+          <li>Willingness to collaborate and grow</li>
+        </ul>
+        
+        <h3>Campaign Services</h3>
+        <ul>
+          <li>Social media marketing and management</li>
+          <li>Public relations and media outreach</li>
+          <li>Event booking and coordination</li>
+          <li>Content creation (photos, videos, graphics)</li>
+          <li>Merchandise design and production</li>
+          <li>Tour support and logistics</li>
+        </ul>
+
+        {/* Email Button */}
+        <a href="mailto:campaigns.swamprecords@gmail.com" className="email-button">
+          📩 Contact Our Team
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
     </div>
   );

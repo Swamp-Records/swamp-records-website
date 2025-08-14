@@ -23,13 +23,13 @@ export default function BioSection() {
 
           {/* Image Section */}
           <div className="bio-images">
-            <div className="image-card">
+            <div className="image-card" data-credit="Photo: Elise Norman">
               <img src="/media/elise-buboy2.webp" alt="Performance" />
             </div>
-            <div className="image-card tall">
+            <div className="image-card tall" data-credit="Photo: Hayley Power">
               <img src="/media/hayley-tempo.webp" alt="Artist with mic" />
             </div>
-            <div className="image-card">
+            <div className="image-card" data-credit="Photo: Elise Norman">
               <img src="/media/elise-crowd2.webp" alt="Crowd at concert" />
             </div>
           </div>
@@ -77,6 +77,7 @@ export default function BioSection() {
           gap: 1rem;
         }
         .image-card {
+          position: relative;
           border-radius: 0.75rem;
           overflow: hidden;
           box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -86,10 +87,32 @@ export default function BioSection() {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          display: block;
+          transition: transform 0.3s ease;
         }
         .image-card:hover img {
           transform: scale(1.05);
         }
+
+        /* Photo credit overlay */
+        .image-card::after {
+          content: attr(data-credit);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.6);
+          color: white;
+          font-size: 0.875rem;
+          padding: 0.5rem;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+        }
+        .image-card:hover::after {
+          opacity: 1;
+        }
+
         .image-card.tall {
           grid-row: span 2;
         }
