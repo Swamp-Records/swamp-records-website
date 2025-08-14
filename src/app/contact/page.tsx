@@ -1,13 +1,3 @@
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faEnvelope, 
-  faMapMarkerAlt, 
-  faUniversity,
-  faClock
-} from '@fortawesome/free-solid-svg-icons';
-
 export default function ContactPage() {
   return (
     <div className="contact-page">

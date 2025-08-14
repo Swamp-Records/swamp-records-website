@@ -1,7 +1,5 @@
-import Navigation from '@/components/Navigation';
 import Carousel from '@/components/Carousel';
 import BioSection from '@/components/BioSection';
-import Footer from '@/components/Footer';
 
 const carouselSlides = [
   {
