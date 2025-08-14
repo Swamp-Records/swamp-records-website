@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faInstagram, 
@@ -13,7 +14,7 @@ export default function Navigation() {
   return (
     <header className="header">
       <div className="header-container">
-        <a href="/" className="logo-link">
+        <Link href="/" className="logo-link">
           <Image
             src="/circle-logo-white.png"
             alt="Swamp Records Logo"
@@ -22,14 +23,14 @@ export default function Navigation() {
             className="logo"
             style={{ objectFit: 'contain' }}
           />
-        </a>
+        </Link>
 
         <nav className="nav-links">
-          <a href="/about">About</a>
-          <a href="/artists">Artists</a>
-          <a href="/events">Events</a>
-          <a href="/apply">Apply</a>
-          <a href="/contact">Contact</a>
+          <Link href="/about">About</Link>
+          <Link href="/artists">Artists</Link>
+          {/* <Link href="/events">Events</Link> */}
+          <Link href="/apply">Apply</Link>
+          <Link href="/contact">Contact</Link>
 
           <div className="socials">
             <a 
@@ -69,4 +70,4 @@ export default function Navigation() {
       </div>
     </header>
   );
-} 
+}

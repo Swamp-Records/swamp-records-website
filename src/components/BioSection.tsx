@@ -12,12 +12,12 @@ export default function BioSection() {
               while offering hands-on experience to students pursuing careers in the music industry.
             </p>
             <p>
-              We're passionate about empowering the Florida music scene by organizing concerts, festivals, and creative events.
-              Our mission is to spotlight local art, music, and culture by collaborating with Gainesville’s businesses,
+              We&apos;re passionate about empowering the Florida music scene by organizing concerts, festivals, and creative events.
+              Our mission is to spotlight local art, music, and culture by collaborating with Gainesville&apos;s businesses,
               nonprofits, and artists to grow and enrich the community.
             </p>
             <p className="highlight-text">
-              We're a collective of creatives, organizers, taste-makers, and friends working to uplift Gainesville.
+              We&apos;re a collective of creatives, organizers, taste-makers, and friends working to uplift Gainesville.
             </p>
           </div>
 

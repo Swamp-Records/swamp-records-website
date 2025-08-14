@@ -1,5 +1,3 @@
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import Image from 'next/image';
 
 const campaigns = [
@@ -59,13 +57,12 @@ const previousCampaigns = [
 export default function CampaignsPage() {
   return (
     <div className="campaigns-page">
-      <Navigation />
       
       {/* Hero Section */}
       <section className="campaigns-hero">
         <div className="hero-content">
           <h1>Campaigns</h1>
-          <p className="hero-subtitle">Strategic marketing and promotion for Gainesville's finest artists</p>
+          <p className="hero-subtitle">Strategic marketing and promotion for Gainesville&apos;s finest artists</p>
         </div>
       </section>
 
@@ -143,7 +140,7 @@ export default function CampaignsPage() {
                 <div className="status-card closed">
                   <h4>Spring 2025</h4>
                   <p className="status">Applications Closed</p>
-                  <p>Thank you for your interest. We've received an overwhelming response and are no longer accepting applications for Spring 2025 campaigns.</p>
+                  <p>Thank you for your interest. We&apos;ve received an overwhelming response and are no longer accepting applications for Spring 2025 campaigns.</p>
                 </div>
                 <div className="status-card coming-soon">
                   <h4>Fall 2025</h4>
@@ -178,7 +175,6 @@ export default function CampaignsPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 } 

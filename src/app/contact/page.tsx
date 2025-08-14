@@ -1,29 +1,16 @@
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faEnvelope, 
-  faMapMarkerAlt, 
-  faUniversity,
-  faPhone,
-  faClock
-} from '@fortawesome/free-solid-svg-icons';
-
 export default function ContactPage() {
   return (
     <div className="contact-page">
-      <Navigation />
       
       {/* Hero Section */}
       <section className="contact-hero">
         <div className="hero-content">
           <h1>Contact Us</h1>
-          <p className="hero-subtitle">Get in touch with the Swamp Records team</p>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="contact-info-section">
+      {/* <section className="contact-info-section">
         <div className="container">
           <h2>Get In Touch</h2>
           <div className="contact-grid">
@@ -64,7 +51,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Form */}
       <section className="contact-form-section">
@@ -106,7 +93,7 @@ export default function ContactPage() {
             <div className="form-info">
               <h3>What to Include</h3>
               <ul>
-                <li><strong>Artist Inquiries:</strong> Include links to your music, social media, and what you're looking for</li>
+                <li><strong>Artist Inquiries:</strong> Include links to your music, social media, and what you&apos;re looking for</li>
                 <li><strong>Team Applications:</strong> Mention your interests, experience, and why you want to join</li>
                 <li><strong>Event Inquiries:</strong> Include venue details, date, and type of event</li>
                 <li><strong>Partnerships:</strong> Describe your organization and collaboration ideas</li>
@@ -128,27 +115,27 @@ export default function ContactPage() {
           <div className="faq-grid">
             <div className="faq-item">
               <h3>How do I apply to join the team?</h3>
-              <p>Visit our <a href="/apply">Apply page</a> for current application status and available positions. We typically open applications in August for Fall semester and January for Spring semester.</p>
+              <p>Visit our <a href="/apply">application page</a> for current application status and available positions. We typically open applications in August for Fall semester and January for Spring semester.</p>
             </div>
             
             <div className="faq-item">
               <h3>How can artists work with Swamp Records?</h3>
-              <p>We're always looking for new talent! Send us an email with links to your music and social media. We work with artists based in the Gainesville/North Central Florida area.</p>
+              <p>We&apos;re always looking for new talent! Send us an email with links to your music and social media. We work with artists based in the Gainesville/North Central Florida area.</p>
             </div>
             
             <div className="faq-item">
               <h3>Do you book events at venues?</h3>
-              <p>Yes! We work with venues, artists, and organizations to create memorable events. Contact us with your event details and we'll discuss collaboration opportunities.</p>
+              <p>Yes! We work with venues, artists, and organizations to create memorable events. Contact us with your event details and we&apos;ll discuss collaboration opportunities.</p>
             </div>
             
             <div className="faq-item">
               <h3>Are you affiliated with UF?</h3>
-              <p>Yes, we're a student-run organization at the University of Florida. Our team consists of UF students from various majors who are passionate about the music industry.</p>
+              <p>Yes, we&apos;re a student-run organization at the University of Florida. Our team consists of UF students from various majors who are passionate about the music industry.</p>
             </div>
             
             <div className="faq-item">
               <h3>Do you offer internships?</h3>
-              <p>While we don't offer formal internships, joining our team provides hands-on experience in the music industry. Many of our alumni have gone on to successful careers in music, marketing, and event management.</p>
+              <p>While we don&apos;t offer formal internships, joining our team provides hands-on experience in the music industry. Many of our alumni have gone on to successful careers in music, marketing, and event management.</p>
             </div>
             
             <div className="faq-item">
@@ -160,7 +147,7 @@ export default function ContactPage() {
       </section>
 
       {/* Social Media */}
-      <section className="social-section">
+      {/* <section className="social-section">
         <div className="container">
           <h2>Follow Us</h2>
           <p>Stay connected with Swamp Records on social media for the latest updates, behind-the-scenes content, and exclusive announcements.</p>
@@ -183,9 +170,8 @@ export default function ContactPage() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <Footer />
     </div>
   );
 } 

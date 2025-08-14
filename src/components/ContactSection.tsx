@@ -45,7 +45,7 @@ export default function ContactSection() {
           
           <div className="contact-cta">
             <h3>Interested in working with us?</h3>
-            <p>Whether you're an artist looking for support or a student wanting to get involved, we'd love to hear from you.</p>
+            <p>Whether you&apos;re an artist looking for support or a student wanting to get involved, we&apos;d love to hear from you.</p>
             <a href="#apply" className="cta-button">Apply Now</a>
           </div>
         </div>

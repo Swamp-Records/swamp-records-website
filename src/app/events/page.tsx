@@ -1,5 +1,3 @@
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import Image from 'next/image';
 
 const upcomingEvents = [
@@ -12,70 +10,49 @@ const upcomingEvents = [
     description: "Join us for the official release party of Buboy's latest album. Live performance, merch, and special guests.",
     tickets: "Free Entry",
     status: "Upcoming"
-  },
-  {
-    title: "The Nancys Spring Showcase",
-    date: "April 22, 2025", 
-    time: "7:30 PM",
-    location: "Heartwood Soundstage, Gainesville",
-    image: "/graphics/nancys.webp",
-    description: "An intimate evening with The Nancys featuring new material and fan favorites.",
-    tickets: "$15 Advance / $20 Door",
-    status: "Upcoming"
-  },
-  {
-    title: "Swamp Records Presents: Local Showcase",
-    date: "May 10, 2025",
-    time: "6:00 PM", 
-    location: "Plaza Live, Gainesville",
-    image: "/events/local-showcase.jpg",
-    description: "A celebration of Gainesville's music scene featuring multiple local artists and bands.",
-    tickets: "$10 General Admission",
-    status: "Upcoming"
   }
 ];
 
-const pastEvents = [
-  {
-    title: "Swamp Cats Farewell Show",
-    date: "December 2023",
-    location: "The Wooly, Gainesville",
-    description: "A bittersweet farewell to one of Gainesville's favorite bands. Sold out show with incredible energy.",
-    highlights: ["Sold Out", "Special Guests", "Merch Sale"]
-  },
-  {
-    title: "Echo Valley Folk Festival",
-    date: "October 2022",
-    location: "Depot Park, Gainesville", 
-    description: "A beautiful day of folk music in the heart of Gainesville. Featured 12 local and regional artists.",
-    highlights: ["12 Artists", "Food Trucks", "Family Friendly"]
-  },
-  {
-    title: "Gators Punk Revolution",
-    date: "August 2021",
-    location: "Loosey's, Gainesville",
-    description: "High-energy punk showcase that brought the underground scene together for an unforgettable night.",
-    highlights: ["5 Bands", "Mosh Pit", "Local Vendors"]
-  },
-  {
-    title: "Swamp Folk Collective Album Release",
-    date: "June 2020",
-    location: "Heartwood Soundstage, Gainesville",
-    description: "Collaborative folk project release party featuring 8 local musicians and special performances.",
-    highlights: ["8 Musicians", "Album Release", "Live Recording"]
-  }
-];
+// const pastEvents = [
+//   {
+//     title: "Swamp Cats Farewell Show",
+//     date: "December 2023",
+//     location: "The Wooly, Gainesville",
+//     description: "A bittersweet farewell to one of Gainesville's favorite bands. Sold out show with incredible energy.",
+//     highlights: ["Sold Out", "Special Guests", "Merch Sale"]
+//   },
+//   {
+//     title: "Echo Valley Folk Festival",
+//     date: "October 2022",
+//     location: "Depot Park, Gainesville", 
+//     description: "A beautiful day of folk music in the heart of Gainesville. Featured 12 local and regional artists.",
+//     highlights: ["12 Artists", "Food Trucks", "Family Friendly"]
+//   },
+//   {
+//     title: "Gators Punk Revolution",
+//     date: "August 2021",
+//     location: "Loosey's, Gainesville",
+//     description: "High-energy punk showcase that brought the underground scene together for an unforgettable night.",
+//     highlights: ["5 Bands", "Mosh Pit", "Local Vendors"]
+//   },
+//   {
+//     title: "Swamp Folk Collective Album Release",
+//     date: "June 2020",
+//     location: "Heartwood Soundstage, Gainesville",
+//     description: "Collaborative folk project release party featuring 8 local musicians and special performances.",
+//     highlights: ["8 Musicians", "Album Release", "Live Recording"]
+//   }
+// ];
 
 export default function EventsPage() {
   return (
     <div className="events-page">
-      <Navigation />
       
       {/* Hero Section */}
       <section className="events-hero">
         <div className="hero-content">
           <h1>Events</h1>
-          <p className="hero-subtitle">Live music, unforgettable experiences, and the best of Gainesville's music scene</p>
+          <p className="hero-subtitle">Live music, unforgettable experiences, and the best of Gainesville&apos;s music scene</p>
         </div>
       </section>
 
@@ -113,7 +90,7 @@ export default function EventsPage() {
       </section>
 
       {/* Past Events */}
-      <section className="past-events">
+      {/* <section className="past-events">
         <div className="container">
           <h2>Past Events</h2>
           <p className="section-intro">
@@ -139,10 +116,10 @@ export default function EventsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Event Calendar */}
-      <section className="calendar-section">
+      {/* <section className="calendar-section">
         <div className="container">
           <h2>Event Calendar</h2>
           <div className="calendar-content">
@@ -168,9 +145,8 @@ export default function EventsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <Footer />
     </div>
   );
 } 

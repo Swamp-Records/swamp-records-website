@@ -1,81 +1,48 @@
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import Image from 'next/image';
 
 const currentArtists = [
   {
     name: "Buboy",
-    image: "/graphics/buboy.webp",
+    image: "/media/elise-buboy.webp",
     logo: "/graphics/buboy-logo.png",
     genre: "Indie Rock",
     description: "Filipino-American indie rock artist who drinks a lot of milk and goes to the movie theater alone (separate activities, rarely together).",
-    link: "/artists/buboy"
+    link: "https://www.buboymusic.com/home"
   },
   {
     name: "The Nancys",
-    image: "/graphics/nancys.webp", 
+    image: "/media/hayley-nancys.webp",
     logo: "/graphics/nancys-logo.png",
     genre: "Indie Rock",
     description: "An indie rock band that started with a simple recipe: good friends, great music, and the occasional interruption from their beloved cats.",
-    link: "/artists/nancys"
-  },
-  {
-    name: "Mystery Band",
-    image: "/graphics/mystery.webp",
-    genre: "Coming Soon",
-    description: "A secret new artist joining the Swamp Records family. Stay tuned for the big reveal!",
-    link: "/artists/mystery"
+    link: "https://thenancysband.com/"
   }
 ];
 
-const previousArtists = [
-  {
-    name: "The Swamp Cats",
-    image: "/artists/swamp-cats.jpg",
-    genre: "Blues Rock",
-    year: "2023",
-    description: "Gainesville's favorite blues rock band that brought the swamp to life."
-  },
-  {
-    name: "Echo Valley",
-    image: "/artists/echo-valley.jpg", 
-    genre: "Folk",
-    year: "2022",
-    description: "Acoustic folk duo that captured the heart of North Central Florida."
-  },
-  {
-    name: "The Gators",
-    image: "/artists/gators.jpg",
-    genre: "Punk Rock", 
-    year: "2021",
-    description: "High-energy punk rock that defined the Gainesville underground scene."
-  },
-  {
-    name: "Swamp Folk Collective",
-    image: "/artists/swamp-folk.jpg",
-    genre: "Folk Rock",
-    year: "2020", 
-    description: "Collaborative folk project that brought together local musicians."
-  }
-];
+// const previousArtists = [
+//   {
+//     name: "  ",
+//     image: "/artists/swamp-cats.jpg",
+//     genre: "Blues Rock",
+//     year: "2023",
+//     description: ""
+//   }
+// ];
 
 export default function ArtistsPage() {
   return (
-    <div className="artists-page">
-      <Navigation />
-      
+    <div className="artists-page">      
       {/* Hero Section */}
       <section className="artists-hero">
         <div className="hero-content">
           <h1>Our Artists</h1>
-          <p className="hero-subtitle">Discover the talent that makes Gainesville's music scene thrive</p>
+          {/* <p className="hero-subtitle">Discover the talent that makes Gainesville's music scene thrive</p> */}
         </div>
       </section>
 
       {/* Current Artists */}
       <section className="current-artists">
         <div className="container">
-          <h2>Current Artists</h2>
           <div className="artists-grid">
             {currentArtists.map((artist, index) => (
               <div key={index} className="artist-card current">
@@ -92,7 +59,7 @@ export default function ArtistsPage() {
                       <Image
                         src={artist.logo}
                         alt={`${artist.name} logo`}
-                        width={200}
+                        width={190}
                         height={80}
                         className="logo-image"
                       />
@@ -103,7 +70,7 @@ export default function ArtistsPage() {
                   <h3>{artist.name}</h3>
                   <p className="artist-genre">{artist.genre}</p>
                   <p className="artist-description">{artist.description}</p>
-                  <a href={artist.link} className="artist-link">Learn More</a>
+                  <a href={artist.link} target="_blank" className="artist-link">Visit Website</a>
                 </div>
               </div>
             ))}
@@ -112,7 +79,7 @@ export default function ArtistsPage() {
       </section>
 
       {/* Previous Artists */}
-      <section className="previous-artists">
+      {/* <section className="previous-artists">
         <div className="container">
           <h2>Previous Artists</h2>
           <p className="section-intro">
@@ -141,24 +108,23 @@ export default function ArtistsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Join Us Section */}
       <section className="join-section">
         <div className="container">
-          <h2>Want to Join Our Family?</h2>
+          <h2 style={{marginBottom: '1rem'}}>Want to Join Our Family?</h2>
           <p>
             Are you a musician or band looking for support in the Gainesville area? 
-            We're always looking for new talent to work with.
+            We&apos;re always looking for new talent to work with.
           </p>
           <div className="cta-buttons">
-            <a href="/campaigns" className="cta-button primary">View Campaigns</a>
+            {/* <a href="/campaigns" className="cta-button primary">View Campaigns</a> */}
             <a href="/contact" className="cta-button secondary">Get In Touch</a>
           </div>
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 } 
