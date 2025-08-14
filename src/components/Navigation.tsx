@@ -34,7 +34,7 @@ export default function Navigation() {
 
           <div className="socials">
             <a 
-              href="https://www.instagram.com/hpphotodesign/" 
+              href="https://www.instagram.com/swamprecordsuf" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -42,7 +42,7 @@ export default function Navigation() {
               <FontAwesomeIcon icon={faInstagram} />
             </a>
             <a 
-              href="https://www.instagram.com/hpphotodesign/" 
+              href="https://www.youtube.com/@swamprecordsuf" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="YouTube"
@@ -50,7 +50,7 @@ export default function Navigation() {
               <FontAwesomeIcon icon={faYoutube} />
             </a>
             <a 
-              href="https://www.instagram.com/hpphotodesign/" 
+              href="https://www.tiktok.com/@swamprecordsuf" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="TikTok"
@@ -58,7 +58,7 @@ export default function Navigation() {
               <FontAwesomeIcon icon={faTiktok} />
             </a>
             <a 
-              href="https://www.instagram.com/hpphotodesign/" 
+              href="https://www.linkedin.com/company/swamprecordsuf/" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="LinkedIn"

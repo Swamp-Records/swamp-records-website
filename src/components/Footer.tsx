@@ -11,19 +11,19 @@ export default function Footer() {
         </div>
 
         <div className="footer-socials">
-          <a href="https://www.instagram.com/hpphotodesign/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/swamprecordsuf" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
-          <a href="https://www.instagram.com/hpphotodesign/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <a href="https://www.youtube.com/@swamprecordsuf" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
             <FontAwesomeIcon icon={faYoutube} />
           </a>
-          <a href="https://www.instagram.com/hpphotodesign/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <a href="https://www.tiktok.com/@swamprecordsuf" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
             <FontAwesomeIcon icon={faTiktok} />
           </a>
-          <a href="https://www.instagram.com/hpphotodesign/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/swamprecordsuf/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
-          <a href="mailto:swamprecords@gmail.com" aria-label="Email">
+          <a href="mailto:contact.swamprecords@gmail.com" aria-label="Email">
             <FontAwesomeIcon icon={faEnvelope} />
           </a>
         </div>
