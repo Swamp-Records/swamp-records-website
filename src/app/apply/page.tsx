@@ -1,8 +1,7 @@
 // src/app/apply/page.tsx
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function ApplyPage() {
   const [isMobile, setIsMobile] = useState(false);
