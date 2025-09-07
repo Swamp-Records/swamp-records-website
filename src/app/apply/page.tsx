@@ -1,10 +1,20 @@
 // src/app/apply/page.tsx
+'use client';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function ApplyPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <main style={styles.container}>
+    <main style={{ ...styles.container, gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr' }}>
       <div style={styles.content}>
         <h1 style={styles.heading}>Join Swamp Records</h1>
         <p style={styles.text}>
@@ -20,16 +30,23 @@ export default function ApplyPage() {
           at the start of each semester.
         </p>
 
-        <Link
+        <h3 style={styles.closedApps}>Applications for Fall 2025 are closed. Check back soon for Spring 2026!</h3>
+
+        {/* <Link
           href="https://docs.google.com/forms/d/e/1FAIpQLSf5cfDOwbMQsPdck9nrLOfMcLs37f2luGiG8YV0krrh8gS1tQ/viewform?usp=header"
           target="_blank"
           style={styles.button}
         >
           Apply Now
-        </Link>
+        </Link> */}
       </div>
 
-      <div style={styles.imageWrapper}>
+      <div
+        style={{
+          ...styles.imageWrapper,
+          height: isMobile ? '300px' : '500px',
+        }}
+      >
         <Image
           src="/media/elise-crowd3.webp"
           alt="Crowd at a Swamp Records event"
@@ -85,4 +102,10 @@ const styles: { [key: string]: React.CSSProperties } = {
     borderRadius: '16px',
     overflow: 'hidden',
   },
+  closedApps: {
+    color: 'white',
+    fontSize: '1.5rem',
+    fontWeight: 'bold',
+    marginBottom: '2rem',
+  }
 };

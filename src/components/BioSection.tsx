@@ -26,8 +26,8 @@ export default function BioSection() {
             <div className="image-card" data-credit="Photo: Elise Norman">
               <img src="/media/elise-buboy2.webp" alt="Performance" />
             </div>
-            <div className="image-card tall" data-credit="Photo: Hayley Power">
-              <img src="/media/hayley-tempo.webp" alt="Artist with mic" />
+            <div className="image-card tall" data-credit="Photo: Elise Norman">
+              <img src="/media/elise-nancys.webp" alt="Artist with mic" />
             </div>
             <div className="image-card" data-credit="Photo: Elise Norman">
               <img src="/media/elise-crowd2.webp" alt="Crowd at concert" />

@@ -6,7 +6,7 @@ export default function AboutPage() {
   const images = [
     "elise-buboy.webp",
     "elise-crowd.webp",
-    "elise-nancys.webp",
+    "hayley-tempo.webp",
     "elise-tempo.webp",
     "flipturn.webp",
     "hayley-buboy.webp",
@@ -17,7 +17,7 @@ export default function AboutPage() {
   const credits: Record<string, string> = {
     "elise-buboy.webp": "Photo: Elise Norman",
     "elise-crowd.webp": "Photo: Elise Norman",
-    "elise-nancys.webp": "Photo: Elise Norman",
+    "hayley-tempo.webp": "Photo: Hayley Power",
     "elise-tempo.webp": "Photo: Elise Norman",
     "flipturn.webp": "",
     "hayley-buboy.webp": "Photo: Hayley Power",
