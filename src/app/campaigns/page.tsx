@@ -182,18 +182,11 @@ export default function CampaignsPage() {
         <h3 style={{ marginBottom: '1rem' }}>Application Status</h3>
         <div className="status-cards">
 
-          <div className="status-card closed">
-            <span className="status-badge">Closed</span>
-            <h4>Fall 2025</h4>
-            <p className="status">Applications Closed</p>
-            <p>Thank you for your interest. We&apos;ve received an overwhelming response and are no longer accepting applications for Fall 2025 campaigns.</p>
-          </div>
-
           <div className="status-card coming-soon">
             <span className="status-badge">Coming Soon</span>
             <h4>Spring 2026</h4>
-            <p className="status">Opening August</p>
-            <p>Applications for Spring 2026 campaigns will open in August. Stay tuned for updates and prepare your materials!</p>
+            <p className="status">Opening December</p>
+            <p>Applications for Spring 2026 campaigns will open soon. Stay tuned for updates and prepare your materials!</p>
           </div>
 
         </div>
