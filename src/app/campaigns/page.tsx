@@ -197,9 +197,8 @@ export default function CampaignsPage() {
         <h3>What We Look For</h3>
         <ul>
           <li>Original, high-quality music</li>
-          <li>Active social media presence</li>
           <li>Professional attitude and work ethic</li>
-          <li>Gainesville/North Central Florida based</li>
+          <li>Gainesville based</li>
           <li>Clear artistic vision and goals</li>
           <li>Willingness to collaborate and grow</li>
         </ul>
@@ -210,8 +209,6 @@ export default function CampaignsPage() {
           <li>Public relations and media outreach</li>
           <li>Event booking and coordination</li>
           <li>Content creation (photos, videos, graphics)</li>
-          <li>Merchandise design and production</li>
-          <li>Tour support and logistics</li>
         </ul>
 
         {/* Email Button */}
