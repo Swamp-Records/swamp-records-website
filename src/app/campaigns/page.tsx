@@ -185,7 +185,7 @@ export default function CampaignsPage() {
           <div className="status-card coming-soon">
             <span className="status-badge">Coming Soon</span>
             <h4>Spring 2026</h4>
-            <p className="status">Opening December</p>
+            <p className="status">Opening Soon...</p>
             <p>Applications for Spring 2026 campaigns will open soon. Stay tuned for updates and prepare your materials!</p>
           </div>
 
