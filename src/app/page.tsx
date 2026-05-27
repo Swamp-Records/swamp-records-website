@@ -15,6 +15,13 @@ const carouselSlides = [
     logo: '/graphics/nancys-logo.png',
     description: 'The Nancys are an indie rock band that started with a simple recipe: good friends, great music, and the occasional interruption from their beloved cats.',
     link: '/artists'
+  },
+  {
+    id: 'alex-willow',
+    backgroundImage: '/graphics/alexwillow.webp',
+    logo: '/graphics/alexwillow-logo.png',
+    description: 'Alex Willow is a singer-songwriter whose music houses a wisdom rarely found, imbued with the urgency and vitality characteristic of youth.',
+    link: '/artists'
   }
 ];
 
