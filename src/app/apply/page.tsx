@@ -30,7 +30,7 @@ export default function ApplyPage() {
           at the start of each semester.
         </p>
 
-        <h3 style={styles.closedApps}>Applications for Fall 2025 are closed. Check back soon for Spring 2026!</h3>
+        <h3 style={styles.closedApps}>Applications for Spring 2026  are closed. Check back soon for Fall 2026!</h3>
 
         {/* <Link
           href="https://docs.google.com/forms/d/e/1FAIpQLSf5cfDOwbMQsPdck9nrLOfMcLs37f2luGiG8YV0krrh8gS1tQ/viewform?usp=header"
