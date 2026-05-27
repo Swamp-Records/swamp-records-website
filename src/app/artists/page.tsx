@@ -16,6 +16,14 @@ const currentArtists = [
     genre: "Indie Rock",
     description: "An indie rock band that started with a simple recipe: good friends, great music, and the occasional interruption from their beloved cats.",
     link: "https://thenancysband.com/"
+  },
+  {
+    name: "Alex Willow",
+    image: "/graphics/alexwillow.webp",
+    logo: "/graphics/alexwillow-logo.png",
+    genre: "Indie Folk Singer-Songwriter",
+    description: "A singer-songwriter whose music houses a wisdom rarely found, imbued with the urgency and vitality characteristic of youth.",
+    link: "https://alexwillowmusic.com/"
   }
 ];
 
@@ -54,17 +62,6 @@ export default function ArtistsPage() {
                     height={300}
                     className="artist-photo"
                   />
-                  {artist.logo && (
-                    <div className="artist-logo">
-                      <Image
-                        src={artist.logo}
-                        alt={`${artist.name} logo`}
-                        width={190}
-                        height={80}
-                        className="logo-image"
-                      />
-                    </div>
-                  )}
                 </div>
                 <div className="artist-info">
                   <h3>{artist.name}</h3>
