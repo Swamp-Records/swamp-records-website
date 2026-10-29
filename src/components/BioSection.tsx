@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function BioSection() {
   return (
     <>
@@ -24,13 +26,13 @@ export default function BioSection() {
           {/* Image Section */}
           <div className="bio-images">
             <div className="image-card" data-credit="Photo: Elise Norman">
-              <img src="/media/elise-buboy2.webp" alt="Performance" />
+              <Image src="/media/elise-buboy2.webp" alt="Performance" width={800} height={800} />
             </div>
             <div className="image-card tall" data-credit="Photo: Elise Norman">
-              <img src="/media/elise-nancys.webp" alt="Artist with mic" />
+              <Image src="/media/elise-nancys.webp" alt="Artist with mic" width={800} height={1000} />
             </div>
             <div className="image-card" data-credit="Photo: Elise Norman">
-              <img src="/media/elise-crowd2.webp" alt="Crowd at concert" />
+              <Image src="/media/elise-crowd2.webp" alt="Crowd at concert" width={800} height={800} />
             </div>
           </div>
         </div>
