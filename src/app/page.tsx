@@ -27,9 +27,6 @@ const carouselSlides = [
 ];
 
 export default async function Home() {
-  // Fetch events from Notion database - TESTING RN
-  const events = await getEvents();
-
   return (
     <div className="swamp-homepage">
       <Carousel slides={carouselSlides} />

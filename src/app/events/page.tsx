@@ -1,50 +1,9 @@
-import Image from 'next/image';
+import { getEvents } from '@/notionDB/notion';
 
-const upcomingEvents = [
-  {
-    title: "Buboy Album Release Party",
-    date: "March 15, 2025",
-    time: "8:00 PM",
-    location: "The Wooly, Gainesville",
-    image: "/graphics/buboy.webp",
-    description: "Join us for the official release party of Buboy's latest album. Live performance, merch, and special guests.",
-    tickets: "Free Entry",
-    status: "Upcoming"
-  }
-];
-
-// const pastEvents = [
-//   {
-//     title: "Swamp Cats Farewell Show",
-//     date: "December 2023",
-//     location: "The Wooly, Gainesville",
-//     description: "A bittersweet farewell to one of Gainesville's favorite bands. Sold out show with incredible energy.",
-//     highlights: ["Sold Out", "Special Guests", "Merch Sale"]
-//   },
-//   {
-//     title: "Echo Valley Folk Festival",
-//     date: "October 2022",
-//     location: "Depot Park, Gainesville", 
-//     description: "A beautiful day of folk music in the heart of Gainesville. Featured 12 local and regional artists.",
-//     highlights: ["12 Artists", "Food Trucks", "Family Friendly"]
-//   },
-//   {
-//     title: "Gators Punk Revolution",
-//     date: "August 2021",
-//     location: "Loosey's, Gainesville",
-//     description: "High-energy punk showcase that brought the underground scene together for an unforgettable night.",
-//     highlights: ["5 Bands", "Mosh Pit", "Local Vendors"]
-//   },
-//   {
-//     title: "Swamp Folk Collective Album Release",
-//     date: "June 2020",
-//     location: "Heartwood Soundstage, Gainesville",
-//     description: "Collaborative folk project release party featuring 8 local musicians and special performances.",
-//     highlights: ["8 Musicians", "Album Release", "Live Recording"]
-//   }
-// ];
-
-export default function EventsPage() {
+export default async function EventsPage() {
+  // Fetch events from Notion database 
+  const events = await getEvents();
+  
   return (
     <div className="events-page">
       
@@ -56,35 +15,49 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Upcoming Events */}
+      {/* All Events */}
       <section className="upcoming-events">
         <div className="container">
-          <h2>Upcoming Events</h2>
+          <h2>All Events</h2>
           <div className="events-grid">
-            {upcomingEvents.map((event, index) => (
+            {/* generate event cards by mapping through the events array */}
+            {events.map((event, index) => {
+              //format the date for when it is being displayed (kept as a date obj for status check)
+              const formattedDate = new Date(event.date + "T00:00:00").toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              });
+
+              //format today's date to match the eventDate format (for status of event)
+              const today = new Date();
+              const currDate = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+
+            return (
               <div key={index} className="event-card upcoming">
                 <div className="event-image">
-                  <Image
-                    src={event.image}
-                    alt={event.title}
+                  <img
+                    src={event.imageUrl}
+                    alt={event.name}
                     width={400}
                     height={250}
                     className="event-photo"
                   />
-                  <div className="event-status">{event.status}</div>
+                  {/*change status depending on date*/}
+                  {event.date === currDate ? <div className="event-status">Today!</div> : event.date > currDate ? <div className="event-status">Upcoming</div> : <div className="event-status">Past</div>}
                 </div>
                 <div className="event-info">
-                  <h3>{event.title}</h3>
+                  <h3>{event.name}</h3>
                   <div className="event-details">
-                    <p className="event-date">{event.date} at {event.time}</p>
+                    <p className="event-date">{formattedDate} at {event.time}</p>
                     <p className="event-location">{event.location}</p>
-                    <p className="event-tickets">{event.tickets}</p>
                   </div>
                   <p className="event-description">{event.description}</p>
-                  <button className="event-button">Get Tickets</button>
+                  {/*Only display the 'Get Tickets' button if there is a link to buy tickets*/}
+                  {event.ticketLink != "" ? <button className="event-button"><a href={event.ticketLink} style={{ color: "black" }}>Get Tickets</a></button> : <p className="event-ticket">Get tickets at the door.</p>}
                 </div>
               </div>
-            ))}
+            )})}
           </div>
         </div>
       </section>
