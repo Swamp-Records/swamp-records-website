@@ -1,6 +1,5 @@
 import Carousel from '@/components/Carousel';
 import BioSection from '@/components/BioSection';
-import { getEvents } from "@/notionDB/notion"; //Fetch events from Notion database
 
 const carouselSlides = [
   {
@@ -26,7 +25,7 @@ const carouselSlides = [
   }
 ];
 
-export default async function Home() {
+export default function Home() {
   return (
     <div className="swamp-homepage">
       <Carousel slides={carouselSlides} />
