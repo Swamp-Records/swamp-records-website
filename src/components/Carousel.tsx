@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 
 interface CarouselSlide {
@@ -17,66 +17,73 @@ interface CarouselProps {
 }
 
 export default function Carousel({ slides }: CarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentIndexRef = useRef(0);
+  const movingRef = useRef(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | undefined>(undefined);
+  const wrapTimeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const slideCount = slides.length;
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
+  const goToSlide = useCallback((index: number) => {
+    currentIndexRef.current = index;
     setIsTransitioning(true);
     if (trackRef.current) {
       trackRef.current.style.transform = `translateX(-${index * 100}vw)`;
     }
-  };
+  }, []);
 
-  const nextSlide = () => {
-    if (currentIndex >= slideCount) return;
-    goToSlide(currentIndex + 1);
-  };
+  const nextSlide = useCallback(() => {
+    if (movingRef.current || slideCount < 2) return;
+    movingRef.current = true;
+    goToSlide(currentIndexRef.current + 1);
+  }, [goToSlide, slideCount]);
 
-  const prevSlide = () => {
-    if (currentIndex <= 0) {
-      setCurrentIndex(slideCount);
+  const prevSlide = useCallback(() => {
+    if (movingRef.current || slideCount < 2) return;
+    movingRef.current = true;
+    if (currentIndexRef.current <= 0) {
+      currentIndexRef.current = slideCount;
       setIsTransitioning(false);
       if (trackRef.current) {
         trackRef.current.style.transform = `translateX(-${slideCount * 100}vw)`;
       }
-      setTimeout(() => {
-        setCurrentIndex(slideCount - 1);
-        setIsTransitioning(true);
-        if (trackRef.current) {
-          trackRef.current.style.transform = `translateX(-${(slideCount - 1) * 100}vw)`;
-        }
+      wrapTimeoutRef.current = setTimeout(() => {
+        wrapTimeoutRef.current = undefined;
+        goToSlide(slideCount - 1);
       }, 20);
     } else {
-      goToSlide(currentIndex - 1);
+      goToSlide(currentIndexRef.current - 1);
     }
-  };
+  }, [goToSlide, slideCount]);
 
-  const handleTransitionEnd = () => {
-    if (currentIndex === slideCount) {
+  const handleTransitionEnd = useCallback((event: TransitionEvent) => {
+    if (event.target !== trackRef.current || event.propertyName !== 'transform') return;
+    movingRef.current = false;
+    if (currentIndexRef.current === slideCount) {
       setIsTransitioning(false);
-      setCurrentIndex(0);
+      currentIndexRef.current = 0;
       if (trackRef.current) {
         trackRef.current.style.transform = 'translateX(0)';
       }
     }
-  };
+  }, [slideCount]);
 
-  const startAutoSlide = () => {
+  const stopAutoSlide = useCallback(() => {
+    if (intervalRef.current !== undefined) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = undefined;
+    }
+  }, []);
+
+  const startAutoSlide = useCallback(() => {
+    stopAutoSlide();
+    if (slideCount < 2) return;
     intervalRef.current = setInterval(() => {
       nextSlide();
     }, 6000);
-  };
-
-  const stopAutoSlide = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-  };
+  }, [nextSlide, slideCount, stopAutoSlide]);
 
   const handlePrevClick = () => {
     stopAutoSlide();
@@ -91,29 +98,43 @@ export default function Carousel({ slides }: CarouselProps) {
   };
 
   useEffect(() => {
-    // Clone first slide and append to track
-    if (trackRef.current && trackRef.current.children.length > 0) {
-      const firstSlide = trackRef.current.children[0];
-      const clone = firstSlide.cloneNode(true);
-      trackRef.current.appendChild(clone);
+    const track = trackRef.current;
+    let clone: Node | undefined;
+
+    if (track && track.children.length > 0) {
+      const firstSlide = track.children[0];
+      clone = firstSlide.cloneNode(true);
+      track.appendChild(clone);
     }
 
+    movingRef.current = false;
     goToSlide(0);
     startAutoSlide();
 
     return () => {
       stopAutoSlide();
+      if (wrapTimeoutRef.current !== undefined) {
+        clearTimeout(wrapTimeoutRef.current);
+        wrapTimeoutRef.current = undefined;
+      }
+      if (clone?.parentNode === track) {
+        track?.removeChild(clone);
+      }
+      movingRef.current = false;
     };
-  }, []);
+  }, [goToSlide, startAutoSlide, stopAutoSlide]);
 
   useEffect(() => {
-    if (trackRef.current) {
-      trackRef.current.addEventListener('transitionend', handleTransitionEnd);
-      return () => {
-        trackRef.current?.removeEventListener('transitionend', handleTransitionEnd);
-      };
+    const track = trackRef.current;
+    if (!track) {
+      return undefined;
     }
-  }, [currentIndex]);
+
+    track.addEventListener('transitionend', handleTransitionEnd);
+    return () => {
+      track.removeEventListener('transitionend', handleTransitionEnd);
+    };
+  }, [handleTransitionEnd]);
 
   return (
     <div
@@ -163,7 +184,10 @@ export default function Carousel({ slides }: CarouselProps) {
                     className="carousel-logo"
                     width={300}
                     height={150}
-                    style={{ objectFit: 'contain' }}
+                    style={{
+                      objectFit: 'contain',
+                      transform: slide.id === 'alex-willow' ? 'scale(0.9)' : undefined,
+                    }}
                   />
                 )}
                 {slide.title && !slide.logo && <h2>{slide.title}</h2>}
@@ -184,4 +208,4 @@ export default function Carousel({ slides }: CarouselProps) {
       </button>
     </div>
   );
-} 
+}
