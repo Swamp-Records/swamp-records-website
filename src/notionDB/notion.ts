@@ -5,4 +5,4 @@ export const notion = new Client({
   auth: process.env.NOTION_API_TOKEN,
 });
 
-export async function getEvents() { return await getEventsFromDB(notion); }
+export async function getEvents() { return await getEventsFromDB(); }

@@ -49,8 +49,8 @@ const parseEventPage = (page: PageObjectResponse) => {
     return { id: page.id, name, artists, date, time, location, ticketLink, imageUrl, description };
 };
 
-export const getEventsFromDB = async (client: any) => {
-    //query the dataase for all the events
+export const getEventsFromDB = async () => {
+    //query the database for all the events
     const response = await notion.dataSources.query({
         data_source_id: process.env.NOTION_DATA_SOURCE_ID!,
     });
