@@ -186,6 +186,8 @@ export default function Carousel({ slides }: CarouselProps) {
                     height={150}
                     style={{
                       objectFit: 'contain',
+                      display: 'block',
+                      margin: '0 auto',
                       transform: slide.id === 'alex-willow' ? 'scale(0.9)' : undefined,
                     }}
                   />
