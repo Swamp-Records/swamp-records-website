@@ -3,6 +3,8 @@ import { getEvents } from '@/notionDB/notion';
 export default async function EventsPage() {
   // Fetch events from Notion database 
   const events = await getEvents();
+
+  const sortedEvents = [...events].sort((a, b) => b.date.localeCompare(a.date));
   
   return (
     <div className="events-page">
@@ -21,7 +23,7 @@ export default async function EventsPage() {
           <h2>All Events</h2>
           <div className="events-grid">
             {/* generate event cards by mapping through the events array */}
-            {events.map((event, index) => {
+            {sortedEvents.map((event, index) => {
               //format the date for when it is being displayed (kept as a date obj for status check)
               const formattedDate = new Date(event.date + "T00:00:00").toLocaleDateString("en-US", {
                 month: "long",
