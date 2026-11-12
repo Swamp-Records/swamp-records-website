@@ -250,7 +250,9 @@ export default function ArtistsPage() {
         }
 
         .ap-name {
-          font-family: ${nameFont};
+          font-family: var(--font-archivo), 'Arial Black', Arial, sans-serif;
+          font-variation-settings: 'wdth' 125;
+          font-weight: 800;
           font-size: 1.1rem;
           text-transform: uppercase;
           letter-spacing: 0.04em;

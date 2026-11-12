@@ -5,6 +5,14 @@ import "./globals.css";
 import Script from "next/script";
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Archivo } from 'next/font/google';
+
+const archivo = Archivo({
+  subsets: ['latin'],
+  axes: ['wdth'],          // include the width axis
+  variable: '--font-archivo',
+  display: 'swap',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,9 +41,9 @@ export default function RootLayout({
         <link rel="preload" href="/graphics/mystery.webp" as="image" />
         <link rel="preload" href="/graphics/nancys.webp" as="image" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} antialiased`}
+        >
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ZTWG6RMCES"
           strategy="afterInteractive"
