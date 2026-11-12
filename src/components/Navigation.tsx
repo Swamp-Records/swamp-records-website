@@ -50,6 +50,8 @@ export default function Navigation() {
             {/* <Link href="/events">Events</Link> */}
             <Link href="/apply">Apply</Link>
             <Link href="/contact">Contact</Link>
+            <Link href="/campaigns">Campaigns</Link>
+
 
             <div className="socials">
               <a href="https://www.instagram.com/swamprecordsuf" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -93,6 +95,7 @@ export default function Navigation() {
         {/* <Link href="/events" onClick={() => setDrawerOpen(false)}>Events</Link> */}
         <Link href="/apply" onClick={() => setDrawerOpen(false)}>Apply</Link>
         <Link href="/contact" onClick={() => setDrawerOpen(false)}>Contact</Link>
+        <Link href="/campaigns" onClick={() => setDrawerOpen(false)}>Campaigns</Link>
 
         <div className="socials">
           <a href="https://www.instagram.com/swamprecordsuf" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
