@@ -7,13 +7,13 @@ import { teams } from '@/data/teams';
 // Brand palette (from the Figma color swatches). fg = text/line color on that block.
 const teamColors = [
   { bg: '#C8F560', fg: '#000' }, // lime
-  { bg: '#B8A9FF', fg: '#000' }, // lavender
+  { bg: '#B8A9FF', fg: '#3a3554' }, // lavender
   { bg: '#E8420A', fg: '#fff' }, // orange
-  { bg: '#FF74C8', fg: '#000' }, // pink
-  { bg: '#2F5BFF', fg: '#fff' }, // blue
+  { bg: '#ff74c8', fg: '#7f3963' }, // pink
+  { bg: '#2F5BFF', fg: '#142562' }, // blue
   { bg: '#FFE14D', fg: '#000' }, // yellow
-  { bg: '#E52A1E', fg: '#fff' }, // red
-  { bg: '#C4B08F', fg: '#000' }, // tan
+  { bg: '#E52A1E', fg: '#380b08' }, // red
+  { bg: '#C4B08F', fg: '#332e26' }, // tan
 ];
 
 // Falls back to Impact in case something goes wrong with Dreamwalker font; THP costs $$$ 
