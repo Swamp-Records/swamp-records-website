@@ -1,0 +1,123 @@
+.contact-page {
+  margin-top: 0px;
+  background-color: #FFFFFF;
+}
+
+.contact-title-section {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 6rem;
+}
+
+.contact-title {
+  color: #000000;
+  font-family: 'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif;
+  font-size: 13rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.contact-form-section {
+  background-color: #000000;
+  margin-top: 2rem;
+  margin-right: 13.8vw;
+  margin-left: 13.8vw;
+  padding: 3rem 3rem 2rem 3rem;
+  font-family: var(--font-inter);
+  font-size: 1.1rem;
+}
+
+.name-box {
+  border: none;
+  border-bottom: 1px solid #FFFFFF;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.2rem 0;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.name-box::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.name-box:focus {
+  outline: none;
+}
+
+.email-box {
+  border: none;
+  border-bottom: 1px solid #FFFFFF;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.email-box::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.email-box:focus {
+  outline: none;
+}
+
+.subject-options {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.subject-box {
+  border: 1px solid #FFFFFF;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.message-label {
+  display: block;
+  padding-left: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.message-box {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0;
+  border: 1px solid #FFFFFF;
+  background-color: #000000;
+  color: #FFFFFF;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}
+.message-box:focus {
+  outline: none;
+}
+
+.send-button-container {
+  text-align: center;
+  width: 100%;
+}
+
+.send-button {
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 0.8rem 2rem;
+  border-radius: 0;
+  text-align: center;
+}
+
+.send-button:hover {
+  background-color: #D5D5D5;
+}
+
+@media (max-width: 768px) {
+  .contact-title-section {
+    padding-top: 8rem;
+  }
+}
