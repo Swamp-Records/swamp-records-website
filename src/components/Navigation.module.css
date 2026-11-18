@@ -1,0 +1,181 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 1000;
+  /* border-bottom: none;
+  transition: background-color 0.3s ease, border-bottom 0.3s ease; */
+  overflow: visible;
+}
+
+.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 15px 20px; */
+  padding: 0 2rem;
+  width: 100%;
+  background: black;
+}
+
+.logoLink {
+  /* display: flex;
+  align-items: center; */
+  position: absolute;
+  left: 1rem;
+  top: 3rem;
+  z-index: 10;
+}
+
+.logo {
+  width: 8rem;
+  height: auto;
+  /* object-fit: contain; */
+}
+
+.navLinks {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.navLinks a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 0;
+  /* transition: color 0.3s ease; */
+}
+
+.navLinks a:hover {
+  color: gray;
+}
+
+.socials {
+  padding-left: 10px;
+  /* font-size: 1.25rem; */
+  gap: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.socials a {
+  color: white;
+}
+
+.socials a:hover {
+  color: gray;
+}
+
+/* Desktop nav only*/
+.desktopNav {
+  /* display: flex;
+  align-items: center;
+  gap: 20px; */
+  margin-left: auto;
+}
+
+/* Hidden on desktop */
+.hamburgerButton {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile drawer - hidden by default */
+.mobileDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 2000;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.closeButton {
+  align-self: flex-end;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.mobileDrawer > a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 0;
+  font-size: 24px;
+}
+
+.mobileDrawer .socials {
+  margin-top: auto;
+  display: flex;
+  gap: 15px;
+  font-size: 1.5rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .headerContainer {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .hamburgerButton {
+    display: block;
+  }
+
+  .logo {
+    width: 80px;
+    padding-top: 0.4rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .logo {
+    width: 60px;
+  }
+
+  .socials {
+    font-size: 1rem;
+    gap: 10px;
+  }
+}
