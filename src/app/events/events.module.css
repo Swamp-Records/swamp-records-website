@@ -6,7 +6,7 @@
 
 /* Hero Section */
 .events-hero {
-    padding: 200px 20px 20px;
+    padding: 100px 20px 20px;
     background: white;
     text-align: center;
 }
@@ -15,7 +15,7 @@
     margin-bottom: 1.5rem;
     color: #000000;
     font-family: 'Thunderhouse Pro', 'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif;
-    font-size: clamp(5rem, 15vw, 13rem);
+    font-size: clamp(5rem, 18vw, 20rem);
     font-weight: 400;
     line-height: 1.15;
 }
@@ -26,7 +26,7 @@
     font-size: 1rem;
     line-height: 1.5;
     color: black;
-    max-width: 600px;
+    max-width: 620px;
     margin: 0 auto;
 }
 
@@ -40,7 +40,7 @@
 /* Event sections */
 .upcoming-events,
 .past-events {
-    padding: 80px 20px;
+    padding: 70px 20px;
     background: white;
 }
 
@@ -153,8 +153,9 @@
 }
 
 .modal-event-name {
-    font-family: "Zalando Sans Expanded", sans-serif;
-    font-weight: 900;
+    font-family: var(--font-archivo), 'Arial Black', Arial, sans-serif;
+    font-variation-settings: 'wdth' 150;
+    font-weight: 800;
     font-size: 2rem;
     text-transform: uppercase;
     color: black;
@@ -246,15 +247,16 @@
 
 /*ADDITIONAL UPCOMING EVENTS - carousel styles (only shows up when there's more than 4 upcoming events)*/
 .more-upcoming-events {
-  padding: 30px 20px 5px;
+  padding: 8px 20px 5px;
   background: black;
+  margin: 0vw 9vw;
 }
 
 .upcoming-events-title {
     color: white;
     text-transform: uppercase; 
     font-family: 'Thunderhouse Pro', 'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 400;
     line-height: 1;
 }
@@ -316,7 +318,7 @@
     color: black;
     text-transform: uppercase; 
     font-family: 'Thunderhouse Pro', 'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 400;
     line-height: 1;
 }
@@ -378,7 +380,7 @@
   /*FEATURED EVENTS SECTION*/
   .hero-content h1 {
     font-size: 7rem;
-    margin-top: -14%;
+    margin-top: -1%;
   }
 
   .poster-board {
@@ -420,6 +422,12 @@
 
 
   /*ADDITIONAL UPCOMING EVENTS SECTION*/
+  .more-upcoming-events {
+    margin: 0vw 0vw;
+    padding-right: 0vw;
+    padding-left: 0vw;
+  }
+
   .carousel-event {
     flex: 0 0 210px;
   }

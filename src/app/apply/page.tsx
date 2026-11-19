@@ -114,13 +114,14 @@ const styles: { [key: string]: React.CSSProperties } = {
   container: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
-    gap: '2rem',
+    gap: '0rem',
     alignItems: 'center',
     minHeight: '80vh',
     padding: '4rem',
     backgroundColor: 'black',
     color: '#f5f5f5',
-    marginTop: '80px',
+    marginTop: '100px',
+    marginLeft: '6vw', //increased to make space for navbar logo
   },
   content: {
     maxWidth: '500px',
@@ -170,6 +171,7 @@ const styles: { [key: string]: React.CSSProperties } = {
 
 teamsSection: {
   backgroundColor: '#000',
+  marginLeft: '6vw', //increased to fit navbar logo
 },
 teamsHeading: {
   fontFamily: displayFont,
