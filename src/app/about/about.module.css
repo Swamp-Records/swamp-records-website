@@ -1,0 +1,127 @@
+/* src/app/about/about.module.css */
+.page {
+  background: #fff;
+  padding: 8rem 2rem 5rem;   /* was: margin-top: 80px; padding: 3rem 2rem 5rem */
+}
+
+.title {
+  font-family: 'Thunderhouse Pro', 'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif;
+  font-weight: 400;
+  font-size: clamp(4.5rem, 16vw, 12rem);
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+  margin-bottom: 3rem;
+}
+
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.block {
+  margin-bottom: 2.5rem;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-archivo), 'Arial Black', Arial, sans-serif;
+  font-variation-settings: 'wdth' 125;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 0.75rem;
+}
+
+/* Black icon (the global * { color: white } rule would otherwise hide it on white) */
+.icon,
+.icon path {
+  color: #000;
+  fill: #000;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+.block p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #000;
+  max-width: 900px;
+  margin-bottom: 0.9rem;
+}
+
+.block a {
+  color: #000;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.block a:hover {
+  color: #E8420A;
+}
+
+/* ---------- Gallery ---------- */
+.galleryWrap {
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  background: transparent;
+  padding: 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #222;
+}
+
+.item img {
+  transition: transform 0.3s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+.hasCredit::after {
+  content: attr(data-credit);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.hasCredit:hover::after {
+  opacity: 1;
+}
+
+@media (min-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
