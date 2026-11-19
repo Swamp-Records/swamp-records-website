@@ -41,7 +41,7 @@ const parseEventPage = (page: PageObjectResponse) => {
     if (ticketLinkProp.type == 'url') {ticketLink = ticketLinkProp.url || '';}
     //get the image url, if there is none, it will just show the swamp records logo
     if (imageUrlProp.type == 'rich_text') {
-        imageUrl = imageUrlProp.rich_text?.[0]?.plain_text || '/circle-logo-white.png';
+        imageUrl = imageUrlProp.rich_text?.[0]?.plain_text || '/graphics/default-event-img.png';
     }
     if (descriptionProp.type == 'rich_text') {description = descriptionProp.rich_text?.[0]?.plain_text || '';}
 

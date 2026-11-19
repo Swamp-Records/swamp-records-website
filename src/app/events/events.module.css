@@ -1,0 +1,381 @@
+/* Main Events Page */
+.events-page {
+    background: white;
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.events-hero {
+    padding: 200px 20px 20px;
+    background: white;
+    text-align: center;
+}
+
+.hero-content h1 {
+    margin-bottom: 0.2rem;
+    color: #000000;
+    font-family: 'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 13rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: black;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main content container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Event sections */
+.upcoming-events,
+.past-events {
+    padding: 80px 20px;
+    background: white;
+}
+
+
+/* Individual event card for FEATURED EVENTS */
+.poster-board {
+  position: relative;
+  min-height: 400px;
+}
+
+/*STYLE FOR ONE FEATURED EVENT*/
+.count-1 {
+  display: flex;
+  justify-content: center;
+  min-height: auto;
+}
+
+.count-1 .poster {
+    position: relative;
+    width: 320px;
+
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+}
+
+/*STYLE FOR 2-4 FEATURED EVENTS*/
+.poster {
+  position: absolute;
+  width: 320px;
+}
+
+.poster-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.2s ease;
+}
+
+.poster-image:hover {
+    filter: brightness(70%);
+}
+
+.poster-0 {
+  top: -68%;
+  left: -7%;
+}
+
+.poster-1 {
+    top: -78%;
+    right: -7%;
+}
+
+.poster-2 {
+    top: -4%;
+    left: 15%;
+}
+
+.poster-3 {
+    top: 2%;
+    right: 8%;
+}
+
+.thumbtack {
+    position: absolute;
+
+    top: -12px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 25px;
+    height: auto;
+
+    z-index: 5;
+    pointer-events: none;
+}
+
+
+/*STYLE FOR EVENT INFO MODAL POP-UP*/
+.event-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+  padding: 60px 20px;
+}
+
+.event-modal {
+  position: relative;
+
+  width: 80%;
+  max-width: 950px;
+  height: 75vh;
+
+  background: rgba(213, 213, 213, 0.95);
+  padding: 20px 30px;
+  border-radius: 0px;
+
+  overflow: hidden;
+}
+
+.modal-event-name {
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: black;
+    display: flex;
+    justify-self: center;
+}
+
+.modal-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+
+    height: 90%;
+}
+
+.modal-image {
+    width: auto;
+    height: 90%;
+    
+    object-fit: contain;
+    align-self: center;
+    justify-self: start;
+
+    flex-shrink: 0;
+}
+
+.modal-event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+    padding-top: 6%;
+    flex: 1;
+
+}
+
+.modal-event-date {
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: black;
+}
+
+.modal-event-location {
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: black;
+}
+
+.modal-event-description {
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: black;
+}
+
+.modal-event-button {
+    width: 40%;
+    display: inline-block;
+    padding: 10px 20px;
+    background: black;
+    color: #D5D5D5;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 0px;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-event-button:hover {
+    background-color: #3B3B3B;
+}
+
+.modal-event-ticket {
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-style: italic;
+    color: #3B3B3B;
+}
+
+
+/*ADDITIONAL UPCOMING EVENTS - carousel styles (only shows up when there's more than 4 upcoming events)*/
+.more-upcoming-events {
+  padding: 30px 20px 5px;
+  background: black;
+}
+
+.upcoming-events-title {
+    color: white;
+    text-transform: uppercase; 
+    font-family: 'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.upcoming-carousel {
+  display: flex;
+  gap: 30px;
+
+  overflow-x: auto;
+
+  padding: 30px 0;
+
+  scroll-snap-type: x mandatory;
+}
+
+/*hides the scroll bar*/
+.upcoming-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-event {
+  flex: 0 0 280px;
+
+  scroll-snap-align: start;
+}
+
+.carousel-event-image {
+  width: 100%;
+  height: 350px;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: filter 0.2s ease;
+}
+
+.carousel-event-image:hover {
+  filter: brightness(70%);
+}
+
+.carousel-event h3 {
+    margin-top: 15px;
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+
+/*PAST EVENTS GRID*/
+.past-events {
+  padding: 80px 20px;
+  background: white;
+}
+
+.past-events-title {
+    color: black;
+    text-transform: uppercase; 
+    font-family: 'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.past-events-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.past-event {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.past-event-image {
+  width: 100%;
+  height: 350px;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: filter 0.2s ease;
+}
+
+.past-event:hover .past-event-image {
+  filter: brightness(80%);
+}
+
+
+
+
+/* Tablet / mobile */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+  .past-events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .past-events-grid {
+    grid-template-columns: 1fr;
+  }
+}
