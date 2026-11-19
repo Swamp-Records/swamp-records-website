@@ -54,7 +54,7 @@ const currentArtists: Artist[] = [
 //   }
 // ];
 
-const displayFont = "'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif";
+const displayFont = "'Thunderhouse Pro', 'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif";
 const nameFont = "'Arial Black', 'Helvetica Neue', Helvetica, Arial, sans-serif";
 
 export default function ArtistsPage() {
@@ -160,40 +160,41 @@ export default function ArtistsPage() {
       </section> */}
 
       {/* Join Us Section */}
-      <section className="join-section">
-        <div className="container">
-          <h2 style={{ marginBottom: '1rem' }}>Want to Join Our Family?</h2>
-          <p>
-            Are you a musician or band looking for support in the Gainesville area? 
-            We&apos;re always looking for new talent to work with.
-          </p>
-          <div className="cta-buttons">
-            <a href="/campaigns" className="cta-button primary">View Campaigns</a>
-            <a href="/contact" className="cta-button secondary">Get In Touch</a>
-          </div>
+      <section className="ap-join">
+        <h2 className="ap-join-title">
+          Want to Join Our Family
+          <span className="ap-qmark">?</span>
+        </h2>        
+        <p>
+          Are you a musician or band looking for support in the Gainesville area?
+          We&apos;re always looking for new talent to work with!
+        </p>
+        <div className="ap-join-buttons">
+          <a href="/campaigns" className="ap-btn ap-btn-solid">View Campaigns</a>
+          <a href="/contact" className="ap-btn ap-btn-outline">Get In Touch</a>
         </div>
       </section>
 
       <style>{`
-.ap-hero {
-  background: transparent;
-  margin-top: 80px;
-  padding: 3rem 2rem 0;
-  margin-bottom: calc(-1 * clamp(2rem, 9vw, 8rem));
-  text-align: center;
-  position: relative;
-  z-index: 3;
-  pointer-events: none;
-}
-.ap-title {
-  font-family: ${displayFont};
-  font-weight: 400;
-  font-size: clamp(4rem, 15vw, 12rem);
-  line-height: 1;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
-}
+        .ap-hero {
+          background: transparent;
+          margin-top: 80px;
+          padding: 3rem 2rem 0;
+          margin-bottom: calc(-1 * clamp(2rem, 9vw, 8rem));
+          text-align: center;
+          position: relative;
+          z-index: 3;
+          pointer-events: none;
+        }
+        .ap-title {
+          font-family: ${displayFont};
+          font-weight: 400;
+          font-size: clamp(4rem, 15vw, 12rem);
+          line-height: 1;
+          text-transform: uppercase;
+          text-align: center;
+          color: #fff;
+        }
 
         .ap-section {
           background: black;
@@ -285,6 +286,51 @@ export default function ArtistsPage() {
         .ap-socials a:hover {
           color: gray;
         }
+        .ap-qmark {
+          font-family: Impact, 'Arial Narrow Bold', Arial, sans-serif;
+          color: #fff;
+        }
+        .ap-join {
+          background: black;
+          text-align: center;
+          padding: 4rem 2rem 6rem;
+        }
+        .ap-join-title {
+          font-family: ${displayFont};
+          font-weight: 400;
+          font-size: clamp(2.5rem, 6vw, 4.5rem);
+          line-height: 1;
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+        }
+        .ap-join p {
+          font-family: Helvetica, Arial, sans-serif;
+          font-size: 1.1rem;
+          max-width: 600px;
+          margin: 0 auto 2rem;
+        }
+        .ap-join-buttons {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        .ap-btn {
+          display: inline-block;
+          padding: 1rem 2.5rem;
+          font-family: Helvetica, Arial, sans-serif;
+          font-size: 1rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          text-decoration: none;
+          border: 2px solid #fff;
+          transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+        .ap-btn-solid { background: #fff; color: #000; }
+        .ap-btn-outline { background: transparent; color: #fff; }
+        .ap-btn-solid:hover { background: #C8F560; border-color: #C8F560; }
+        .ap-btn-outline:hover { background: #fff; color: #000; }
 
         /* Touch devices have no hover: show text under the photo instead */
         @media (hover: none) {

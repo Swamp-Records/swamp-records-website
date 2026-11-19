@@ -17,7 +17,7 @@ const teamColors = [
 ];
 
 // Falls back to Impact in case something goes wrong with Dreamwalker font; THP costs $$$ 
-const displayFont = "'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif";
+const displayFont = "'Thunderhouse Pro', 'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif";
 const bodyFont = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 
 export default function ApplyPage() {

@@ -17,8 +17,10 @@ export default async function EventsPage() {
   const featuredUpcoming = upcomingEvents.slice(0,4); //first four upcoming events will be featured on tacks
   const extraUpcoming = upcomingEvents.slice(4); //the rest of the upcoming events will be displayed in a carausel below the featured events
 
-  const pastEvents = events.filter((event) => event.date < currDate).sort((a, b) => b.date.localeCompare(a.date)); //past events will be displayed in a grid under the upcoming events section
-  
+const pastEvents = events
+  .filter((event) => event.date < currDate)
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .slice(0, 4); // only the 4 most recent  
   return (
     <div className={styles['events-page']}>
       
@@ -27,7 +29,7 @@ export default async function EventsPage() {
         <div className={styles['hero-content']}>
           <h1>EVENTS</h1>
           <p className={styles['hero-subtitle']}>Live music, unforgettable experiences, and the best of Gainesville&apos;s music scene <br/>
-            Click each poster to get more information about our Upcoming Events! 
+            Click each poster to get more information about our upcoming events! 
           </p>
         </div>
       </section>

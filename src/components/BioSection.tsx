@@ -58,16 +58,21 @@ export default function BioSection() {
           gap: 1.5rem;
         }
         .bio-text h2 {
-          font-size: 2.25rem;
-          font-weight: bold;
+          font-family: 'Thunderhouse Pro', 'Dreamwalker', Impact, 'Arial Narrow Bold', sans-serif;
+          font-size: clamp(2.5rem, 5vw, 3.5rem);
+          font-weight: 400;
+          text-transform: uppercase;
+          line-height: 1;
           color: white;
         }
         .bio-text p {
+          font-family: Helvetica, Arial, sans-serif;
           color: white;
           font-size: 1.125rem;
           line-height: 1.75rem;
         }
         .highlight-text {
+          font-family: Helvetica, Arial, sans-serif;
           font-size: 1.25rem;
           font-weight: 600;
           font-style: italic;
