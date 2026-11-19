@@ -4,10 +4,6 @@ import FeaturedEvents from './FeaturedEvents';
 import UpcomingEvents from './UpcomingEvents';
 import PastEvents from './PastEvents';
 
-//ensures Notion data is fresh everytime page is reloaded
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
-
 export default async function EventsPage() {
   // Fetch events from Notion database 
   const events = await getEvents();
