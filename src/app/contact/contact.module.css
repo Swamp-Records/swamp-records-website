@@ -119,5 +119,34 @@
 @media (max-width: 768px) {
   .contact-title-section {
     padding-top: 8rem;
+    margin-top: 0;
+  }
+
+  .contact-title {
+    font-size: 5rem;
+  }
+
+  .contact-form-section {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1.6rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .name-box,
+  .email-box,
+  .subject-box,
+  .message-box {
+    font-size: 1rem;
+  }
+
+  .message-box {
+    min-height: 140px;
+  }
+
+  .send-button {
+    width: 60%;
+    padding: 0.9rem 1rem;
   }
 }
