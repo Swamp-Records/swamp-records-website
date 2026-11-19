@@ -20,7 +20,7 @@ export default async function EventsPage() {
 const pastEvents = events
   .filter((event) => event.date < currDate)
   .sort((a, b) => b.date.localeCompare(a.date))
-  .slice(0, 4); // only the 4 most recent  
+  //.slice(0, 4); // only the 4 most recent  
   return (
     <div className={styles['events-page']}>
       
@@ -28,20 +28,25 @@ const pastEvents = events
       <section className={styles['events-hero']}>
         <div className={styles['hero-content']}>
           <h1>EVENTS</h1>
-          <p className={styles['hero-subtitle']}>Live music, unforgettable experiences, and the best of Gainesville&apos;s music scene <br/>
-            Click each poster to get more information about our upcoming events! 
-          </p>
+          <p className={styles['hero-subtitle']} style={{fontWeight: 'bold'}}>Live music, unforgettable experiences, and the best of Gainesville&apos;s music scene <br/> </p>
+
+          {/* change message depending on how many featured events there are */}
+          {featuredUpcoming.length > 1 && <p className={styles['hero-subtitle']}>Click each poster to get more information about our upcoming events!</p>}
+          {featuredUpcoming.length == 1 && <p className={styles['hero-subtitle']}>Check out our upcoming event! Click the poster below to get more info.</p>}
+          {featuredUpcoming.length == 0 && <p className={styles['hero-subtitle']}><br/>Oh No! We currently have no upcoming events, but take some time to check out our past events!</p>}
         </div>
       </section>
 
       {/* Upcoming Featured Events */}
-      <section className={styles['upcoming-events']}>
-        <div className={styles['container']}>
+      {featuredUpcoming.length > 0 && (
+        <section className={styles['upcoming-events']}>
+          <div className={styles['container']}>
 
-          <FeaturedEvents events={featuredUpcoming}/>
-          
-        </div>
-      </section>
+            <FeaturedEvents events={featuredUpcoming}/>
+            
+          </div>
+        </section>
+      )}
 
 
       {/* ADDITIONAL Upcoming Events Carousel - this section only shows up if there's more than 4 upcoming events */}

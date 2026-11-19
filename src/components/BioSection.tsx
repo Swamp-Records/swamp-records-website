@@ -43,6 +43,7 @@ export default function BioSection() {
           width: 100%;
           background-color: black;
           padding: 5rem 1.5rem;
+          margin-left: 3vw;
         }
         .bio-container {
           max-width: 1280px;

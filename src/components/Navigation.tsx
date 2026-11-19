@@ -13,6 +13,13 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  //keep track of dark pages (logo must be changed to white for these pages)
+  const darkBackgroundPages = ['/', '/artists', '/apply'];
+  const isDarkPage = darkBackgroundPages.includes(pathname);
+
+  //pics the logo img based on whether the page is dark or light
+  const logoSrc = isDarkPage ? "/graphics/circle-logo-white.png" : "/graphics/circle-logo-black.png"
+
   useEffect(() => {
     if (pathname !== '/') return;
 
@@ -36,7 +43,7 @@ const headerClasses =
         {/*Logo is still part of the header but not in headerConatiner - should hang below the navlinks*/}
         <Link href="/" className={styles.logoLink}>
             <Image
-              src="/graphics/circle-logo-black.png"
+              src={logoSrc}
               alt="Swamp Records Logo"
               width={100}
               height={100}

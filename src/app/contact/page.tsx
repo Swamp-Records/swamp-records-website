@@ -64,7 +64,7 @@ export default function ContactPage() {
     <div className={styles['contact-page']}>
       {/*TITLE*/}
       <section className={styles['contact-title-section']}>
-          <h1 className={styles['contact-title']}>CONTACT US</h1>
+          <h1 className={styles['contact-title']}>CONTACT US.</h1>
       </section>
 
       {/*ENTIRE INPUT SECTION (name, email, subject, message, send button)*/}
